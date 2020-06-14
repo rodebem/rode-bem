@@ -15,12 +15,14 @@ import {
 
 import UploadImage from './components/UploadImage';
 
+import photo from '../../../assets/profile.jpg';
+
 const Profile = () => {
   return (
     <Container>
       <Height>
-        <UploadImage />
-        <Name>Jadson José</Name>
+        <UploadImage profile={photo} />
+        <Name>Antônio José</Name>
       </Height>
       <Content>
         <Title>Dados Pessoais</Title>

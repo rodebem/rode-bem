@@ -5,7 +5,9 @@ import {
   Logo,
   Title,
   Input,
-  SignInButton
+  SignInButton,
+  RegisterButton,
+  RegisterButtonText
 } from './styles';
 
 import logo from '../../../assets/logo.png';
@@ -37,6 +39,10 @@ const SignIn = () => {
       <SignInButton onPress={() => navigation.navigate('Main')}>
         Entrar
       </SignInButton>
+
+      <RegisterButton>
+        <RegisterButtonText>Ainda não tem conta? Crie uma agora.</RegisterButtonText>
+      </RegisterButton>
     </Container>
   );
 }

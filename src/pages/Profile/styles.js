@@ -1,15 +1,17 @@
 import styled from 'styled-components/native';
 import Icon from '@expo/vector-icons/Feather';
 
+import Colors from '../../constants/Colors';
+
 export const Container = styled.ScrollView`
   flex: 1;
-  background: #2F80ED;
+  background: ${Colors.backgroundColor};
 `;
 
 export const Height = styled.View`
   align-items: center;
   padding: 80px 20px 40px 20px;
-  background: #2F80ED;
+  background: ${Colors.backgroundColor};
 `;
 
 export const Name = styled.Text`

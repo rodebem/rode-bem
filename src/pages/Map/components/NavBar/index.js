@@ -3,7 +3,7 @@ import React from 'react';
 import { Container, Button, Icon } from './styles';
 import Colors from '../../../../constants/Colors';
 
-import { openModalFilter } from '../../../../store/modules/map/actions';
+import { openModalFilter, openModalEvaluate } from '../../../../store/modules/map/actions';
 import { useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 import { Alert } from 'react-native';
@@ -36,9 +36,6 @@ const NavBar = () => {
     <Container>
       <Button color={Colors.tintColor} onPress={() => navigation.navigate('Home')}>
         <Icon name="search" color="#fff" />
-      </Button>
-      <Button color={Colors.tintColor}>
-        <Icon name="list" color="#fff" />
       </Button>
       <Button color="#F00">
         <Icon name="alert-triangle" color="#fff" onPress={() => alertAuthorities()} />

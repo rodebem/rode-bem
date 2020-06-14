@@ -29,3 +29,12 @@ export const SignInButton = styled(Button)`
   align-self: stretch;
   margin-top: 20px;
 `;
+
+export const RegisterButton = styled.TouchableOpacity`
+  margin-top: 20px;
+`;
+
+export const RegisterButtonText = styled.Text`
+  color: #fff;
+  font-size: 16px;
+`;

@@ -1,6 +1,7 @@
 import produce from 'immer';
 
 const INITIAL_STATE = {
+  evaluateModalOpen: false,
   filterModalOpen: false,
   loading: false,
   destination: {
@@ -24,6 +25,14 @@ export default function map(state = INITIAL_STATE, action) {
       }
       case '@map/CLOSE_MODAL_FILTER': {
         draft.filterModalOpen = false;
+        break;
+      }
+      case '@map/OPEN_MODAL_EVALUATE': {
+        draft.evaluateModalOpen = true;
+        break;
+      }
+      case '@map/CLOSE_MODAL_EVALUATE': {
+        draft.evaluateModalOpen = false;
         break;
       }
       default:

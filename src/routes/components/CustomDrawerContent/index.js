@@ -27,7 +27,7 @@ function CustomDrawerContent(props) {
       <Container>
         <User>
           <Image source={logo} />
-          <Name>Fulado de Tal</Name>
+          <Name>Antônio José</Name>
         </User>
         <Points>
           <Value>9999</Value>

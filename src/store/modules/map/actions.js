@@ -9,3 +9,15 @@ export function closeModalFilter() {
     type: '@map/CLOSE_MODAL_FILTER',
   };
 }
+
+export function openModalEvaluate() {
+  return {
+    type: '@map/OPEN_MODAL_EVALUATE',
+  };
+}
+
+export function closeModalEvaluate() {
+  return {
+    type: '@map/CLOSE_MODAL_EVALUATE',
+  };
+}

@@ -14,7 +14,7 @@ export const Container = styled.View`
 
 export const Button = styled.TouchableOpacity`
   padding: 5px;
-  border-radius: 4px;
+  border-radius: 10px;
   background: ${props => props.color ? props.color : "#333" };
   elevation: 8;
 `;

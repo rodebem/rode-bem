@@ -4,7 +4,7 @@ import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function ImagePickerExample() {
+export default function UpdateImage({ profile }) {
   const [image, setImage] = useState(null);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function ImagePickerExample() {
 
   return (
     <View style={{ alignSelf: 'stretch', alignItems: 'center', justifyContent: 'center' }}>
-      <Image source={{ uri: image }}
+      <Image source={profile}
         style={{
           width: 100,
           height: 100,
@@ -53,7 +53,7 @@ export default function ImagePickerExample() {
           borderRadius: 4
         }}
       >
-        <Text>Adicionar Imagem</Text>
+        <Text>Alterar Foto</Text>
       </TouchableOpacity>
     </View>
   );

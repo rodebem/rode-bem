@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import CInput from '../../../../../../components/Input';
 import Button from '../../../../../../components/Button';
 
 export const Container = styled.View`
@@ -9,9 +10,28 @@ export const Container = styled.View`
   background: #fff;
 `;
 
+export const Image = styled.Image`
+  width: 100%;
+  height: 200px;
+  background: #ddd;
+  border-radius: 10px;
+  margin-bottom: 20px;
+`;
+
 export const Title = styled.Text`
-  font-size: 40px;
+  font-size: 16px;
   font-weight: 100;
+  text-align: center;
+`;
+
+export const Label = styled.Text`
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 30px;
+`;
+
+export const Input = styled(CInput)`
+  margin: 20px 0px;
 `;
 
 export const SaveButton = styled(Button)`

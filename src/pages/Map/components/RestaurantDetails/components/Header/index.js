@@ -18,8 +18,7 @@ const Header = ({ onClick }) => {
         <CloseButtonIcon />
       </CloseButton>
       <Title>
-        <TitleIcon />
-        <TitleText>Filtros</TitleText>
+        <TitleText>Avaliação</TitleText>
       </Title>
       <End />
     </Container>

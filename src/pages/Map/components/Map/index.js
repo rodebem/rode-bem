@@ -1,16 +1,23 @@
 import React, { useState, useRef, useEffect } from 'react';
 import MapView, { Marker } from 'react-native-maps';
-import { StyleSheet, View, Dimensions } from 'react-native';
+import { StyleSheet, View, Dimensions, Alert } from 'react-native';
 import { getPixelSize } from './utils';
 
 import Directions from '../Directions';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { openModalEvaluate } from '../../../../store/modules/map/actions';
 
 export default function Map () {
+  const dispatch = useDispatch();
   const destination = useSelector(state => state.map.destination);
   const [route, setRoute] = useState(null);
 
   let mapView = useRef();
+
+  const handleEvaluateModalOpen = () => {
+    dispatch(openModalEvaluate());
+  }
 
   function fitCoordinates() {
     mapView.fitToCoordinates(route && route.coordinates, {
@@ -62,6 +69,7 @@ export default function Map () {
               latitude: -15.7333119,
               longitude: -47.6754431
             }}
+            onPress={() => handleEvaluateModalOpen()}
           />
 
           <Marker

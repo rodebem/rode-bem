@@ -3,11 +3,10 @@ import Icon from '@expo/vector-icons/Feather';
 import Colors from '../../../../../../constants/Colors';
 
 export const Container = styled.View`
-  padding: 15px 20px 40px 20px;
+  padding: 15px 20px 20px 20px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: ${Colors.backgroundColor};
 `;
 
 export const CloseButton = styled.TouchableOpacity`
@@ -16,7 +15,7 @@ export const CloseButton = styled.TouchableOpacity`
 
 export const CloseButtonIcon = styled(Icon).attrs({
   name: 'x',
-  color: '#fff',
+  color: Colors.backgroundColor,
   size: 25
 })`
   
@@ -36,8 +35,8 @@ export const TitleIcon = styled(Icon).attrs({
 `;
 
 export const TitleText = styled.Text`
-  color: #fff;
-  font-size: 50px;
+  color: ${Colors.backgroundColor};
+  font-size: 30px;
 `;
 
 export const End = styled.View`
