@@ -7,15 +7,20 @@ import MainRoutes from './main/routes';
 import Map from '../pages/Map';
 import Profile from '../pages/Profile';
 
+import CustomDrawerContent from './components/CustomDrawerContent';
+
 export default function ProfileRoutes() {
   return (
     <Drawer.Navigator
-      screenOptions={{}}
+      drawerContent={(props) =>
+        <CustomDrawerContent {...props} />
+      }
     >
       <Drawer.Screen
         name="Home"
         component={MainRoutes}
         options={{
+          drawerLabel: "Roterizador",
           tabBarVisible: true
         }}
       />
@@ -23,12 +28,15 @@ export default function ProfileRoutes() {
         name="Map"
         component={Map}
         options={{
-          tabBarVisible: false
+          drawerLabel: "Mapa"
         }}
       />
       <Drawer.Screen
         name="Profile"
         component={Profile}
+        options={{
+          drawerLabel: "Meu Perfil"
+        }}
       />
     </Drawer.Navigator>
   );

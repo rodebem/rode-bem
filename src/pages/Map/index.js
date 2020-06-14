@@ -4,11 +4,12 @@ import Icon from '@expo/vector-icons/Feather';
 
 import {
   Container,
-  DrawerBotton,
-  FilterButton
+  DrawerBotton
 } from './styles';
 
 import Map from './components/Map';
+import Details from './components/Details';
+import NavBar from './components/NavBar';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
 import Colors from '../../constants/Colors';
 
@@ -26,17 +27,11 @@ const MapPage = () => {
         <Icon name="menu" color={Colors.backgroundColor} size={25} />
       </DrawerBotton>
 
-      <FilterButton icon="sliders">Filtrar</FilterButton>
+      <NavBar />
+
+      <Details />
     </Container>
   );
 }
 
 export default MapPage;
-
-const styles = StyleSheet.create({
-  header: {
-    width: Dimensions.get('window').width,
-    height: 200,
-    backgroundColor: '#fff'
-  },
-});
