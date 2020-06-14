@@ -24,7 +24,9 @@ export default function Map () {
   }
 
   useEffect(() => {
-    fitCoordinates();
+    if(route) {
+      fitCoordinates();
+    }
   }, [route]);
 
     return (
@@ -39,53 +41,49 @@ export default function Map () {
           showsUserLocation
           loadingEnabled
         >
-          {destination && (
-            <>
-              <Directions
-                origin={{
-                  latitude: -3.7899266,
-                  longitude: -38.5891584,
-                }}
-                destination={{
-                  latitude: -23.6815303,
-                  longitude: -46.8761689
-                }}
-                onReady={result => {
-                  setRoute({
-                    duration: Math.floor(result.duration),
-                    coordinates: result.coordinates
-                  });
-                }}
-              />
-              <Marker
-                coordinate={{
-                  latitude: -15.7333119,
-                  longitude: -47.6754431
-                }}
-              />
+          <Directions
+            origin={{
+              latitude: -3.7899266,
+              longitude: -38.5891584,
+            }}
+            destination={{
+              latitude: -23.6815303,
+              longitude: -46.8761689
+            }}
+            onReady={result => {
+              setRoute({
+                duration: Math.floor(result.duration),
+                coordinates: result.coordinates
+              });
+            }}
+          />
+          <Marker
+            coordinate={{
+              latitude: -15.7333119,
+              longitude: -47.6754431
+            }}
+          />
 
-              <Marker
-                coordinate={{
-                  latitude: -11.7100705,
-                  longitude: -44.9720191
-                }}
-              />
+          <Marker
+            coordinate={{
+              latitude: -11.7100705,
+              longitude: -44.9720191
+            }}
+          />
 
-              <Marker
-                coordinate={{
-                  latitude: -3.7899266,
-                  longitude: -38.5891584,
-                }}
-              />
+          <Marker
+            coordinate={{
+              latitude: -3.7899266,
+              longitude: -38.5891584,
+            }}
+          />
 
-              <Marker
-                coordinate={{
-                  latitude: -23.6815303,
-                  longitude: -46.8761689
-                }}
-              />
-            </>
-          )}
+          <Marker
+            coordinate={{
+              latitude: -23.6815303,
+              longitude: -46.8761689
+            }}
+          />
         </MapView>
       </View>
     );
@@ -99,6 +97,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   mapStyle: {
+    flex: 1,
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
   },

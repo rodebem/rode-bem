@@ -9,6 +9,7 @@ import {
 
 import Map from './components/Map';
 import Details from './components/Details';
+import RestaurantDetails from './components/RestaurantDetails';
 import NavBar from './components/NavBar';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
 import Colors from '../../constants/Colors';
@@ -30,6 +31,7 @@ const MapPage = () => {
       <NavBar />
 
       <Details />
+      <RestaurantDetails />
     </Container>
   );
 }

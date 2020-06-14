@@ -8,7 +8,7 @@ import {
 } from './styles';
 import Colors from '../../../../../../constants/Colors';
 
-const Content = ({ onClick }) => {
+const Content = () => {
   const [street, setStreet] = useState(4);
   const [restaurant, setRestaurant] = useState(2);
   const [post, setPost] = useState(4);
@@ -54,7 +54,7 @@ const Content = ({ onClick }) => {
         maximumTrackTintColor="#333"
       />
 
-      <SaveButton icon="sliders" textColor="#fff" onPress={() => onClick()}>Filtrar</SaveButton>
+      <SaveButton icon="sliders" textColor="#fff">Filtrar</SaveButton>
     </Container>
   );
 }
