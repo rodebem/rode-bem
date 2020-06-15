@@ -29,7 +29,7 @@
       "versionCode": 2,
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyBnz5T7J0jKr1p7gTHK7214sMeViVRvMPc"
+          "apiKey": "API Key"
         }
       },
       "permissions": [
