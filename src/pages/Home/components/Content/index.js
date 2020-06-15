@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 import {
@@ -8,10 +8,10 @@ import {
   SearchButton
 } from './styles';
 
-import Search from '../Search';
-
 const Content = () => {
   const navigation = useNavigation();
+  const [origin, setOrigin] = useState('São Paulo - SP');
+  const [destination, setDestination] = useState('');
 
   return (
     <Container>
@@ -20,13 +20,15 @@ const Content = () => {
       <Input
         icon="map-pin"
         placeholder="Saída"
-        value="São Paulo - SP"
+        value={origin}
+        onChangeText={setOrigin}
       />
 
       <Input
         icon="map-pin"
         placeholder="Chegada"
-        value="Fortaleza - CE"
+        value={destination}
+        onChangeText={setDestination}
       />
 
       <SearchButton onPress={() => navigation.navigate('Map')}>Buscar</SearchButton>

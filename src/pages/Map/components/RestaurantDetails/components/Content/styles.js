@@ -34,6 +34,8 @@ export const Input = styled(CInput)`
   margin: 20px 0px;
 `;
 
+export const SaveButtonArea = styled.TouchableOpacity``;
+
 export const SaveButton = styled(Button)`
   margin: 20px;
 `;

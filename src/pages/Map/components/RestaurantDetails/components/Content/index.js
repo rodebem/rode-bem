@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Slider } from 'react-native';
+import { Slider, Alert } from 'react-native';
 
 import {
   Container,
@@ -7,15 +7,23 @@ import {
   Title,
   Label,
   SaveButton,
+  SaveButtonArea,
   Input,
 } from './styles';
+
+import { closeModalEvaluate } from '../../../../../../store/modules/map/actions';
 import Colors from '../../../../../../constants/Colors';
 import restaurante from '../../../../../../../assets/restaurante.jpg';
+import { useDispatch } from 'react-redux';
 
-const Content = ({ onClick }) => {
+const Content = () => {
+  const dispatch = useDispatch();
   const [street, setStreet] = useState(4);
-  const [restaurant, setRestaurant] = useState(2);
-  const [post, setPost] = useState(4);
+
+  const handleModalClose = () => {
+    dispatch(closeModalEvaluate());
+    Alert.alert('Obrigado por sua avaliação', 'Você ganhou 100 pontos');
+  }
 
   return (
     <Container>
@@ -41,7 +49,14 @@ const Content = ({ onClick }) => {
       
       <Input placeholder="Observações" icon="mic" />
 
-      <SaveButton icon="star" textColor="#fff" onPress={() => onClick()}>Avaliar</SaveButton>
+        <SaveButtonArea onPress={() => handleModalClose()}>
+          <SaveButton
+          icon="star"
+          textColor="#fff"
+        >
+          Avaliar
+        </SaveButton>
+        </SaveButtonArea>
     </Container>
   );
 }

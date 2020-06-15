@@ -28,7 +28,7 @@ export default function RestaurantDetails() {
     >
       <View style={{ flex: 1 }}>
         <Header onClick={() => handleModalClose()} />
-        <Content onClick={() => handleModalClose()} />
+        <Content />
       </View>
     </Modal>
   );
